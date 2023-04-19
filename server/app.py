@@ -79,12 +79,40 @@ class Items(Resource):
         return make_response(items, 200)
 api.add_resource(Items, '/items')
 
+class ItemById(Resource):
+    def get(self, id):
+        item = Item.query.filter_by(id=id).first()
+        return make_response(item.to_dict(),200)
+
+api.add_resource(ItemById, '/items/<int:id>')
+
+
+
 class Users(Resource):
 
     def get(self):
         users = [user.to_dict() for user in User.query.all()]
         return make_response(users, 200)
 api.add_resource(Users, '/users')
+
+class UserById(Resource):
+    def get(self, id):
+        user = User.query.filter_by(id=id).first()
+        return make_response(user.to_dict(), 200)
+    
+    def patch(self, id):
+        user = User.query.filter_by(id=id).first()
+        if not user:
+            return make_response({"error": "user not found"},404)
+        request_json = request.get_json()
+        for attr in request_json:
+            setattr(user, attr, request_json[attr])
+        db.session.add(user)
+        db.session.commit()
+
+        return make_response(user.to_dict(),202)
+
+api.add_resource(UserById, '/users/<int:id>')
 
 class OrderById(Resource):
     def get(self, order_id):
@@ -119,6 +147,21 @@ class Orders(Resource):
     def get(self):
         orders = [order.to_dict() for order in Order.query.all()]
         return make_response(orders, 200)
+    
+    def post(self):
+        request_json = request.get_json()
+        if not request_json:
+            return make_response({"error" : "order not found"}, 200)
+        else:
+            new_order = Order(
+                item_id = request_json['item_id'],
+                user_id = request_json['user_id'],
+                quantity = request_json['quantity'],
+                status = request_json['status']
+            )
+            db.session.add(new_order)
+            db.session.commit()
+            return make_response(new_order.to_dict(), 201)
 
 api.add_resource(OrderById, '/orders/<int:order_id>')
 api.add_resource(Orders, '/orders')

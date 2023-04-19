@@ -1,10 +1,10 @@
 import React from 'react'
 import MenuCard from './MenuCard'
 
-function MenuList({menuItems}) {
+function MenuList({menuItems, user}) {
     return (
         <div>
-            {menuItems.map(menuItem => <MenuCard key={menuItem.id} menuItem={menuItem}/> )}
+            {menuItems.map(menuItem => <MenuCard key={menuItem.id} menuItem={menuItem} user={user}/> )}
         </div>
     )
 }

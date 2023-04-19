@@ -104,7 +104,6 @@ function SignUpForm({ onLogin }) {
                     value="signup"
                 />
             </form>
-
         </div>
     )
 }
