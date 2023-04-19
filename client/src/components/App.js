@@ -7,6 +7,7 @@ import NewOrder from "./NewOrder";
 import Profile from './Profile';
 import Menu from "./Menu";
 import Homepage from "./Homepage";
+import EditProfile from "./EditProfile";
 
 function App() {
   const [user, setUser] = useState(null);
@@ -41,17 +42,17 @@ function App() {
   if (!user) return <Login onLogin={setUser} />;
   
   return (
-    <div classname = 'app container'>
+    <div className = 'app container'>
     <div className="App">
       <Header />
       <Navbar handleLogout={handleLogout} />
-      <h1>This is the start of our App</h1>
+      <h1></h1>
       <div>
         <Switch>
           <Route exact path='/'>
-          <div className='row'>
-            <Homepage />
-          </div>
+            <div className='row'>
+              <Homepage />
+            </div>
           </Route>
           <Route path='/neworder'>
             <div className='row'>
@@ -59,15 +60,20 @@ function App() {
             </div>
           </Route>
           <Route exact path='/menu'> 
-          <div className='row'>
-            <Menu menuItems={menuItems}/>
-          </div>
+            <div className='row'>
+              <Menu menuItems={menuItems} user={user}/>
+            </div>
           </Route>
           <Route exact path='/profile'>
             <div className='row'>
-              <Profile />
+              <Profile user={user}/>
             </div>
-            </Route>
+          </Route>
+          <Route exact path="/profile/edit_profile">
+            <div className="row">
+              <EditProfile user={user}/>
+            </div>
+          </Route>
         </Switch>
       </div>
     </div>

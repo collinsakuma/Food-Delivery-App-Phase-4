@@ -1,12 +1,12 @@
 import React from 'react'
 import MenuList from './MenuList'
 
-function Menu({menuItems}) {
+function Menu({menuItems, user}) {
 
     return (
         <div>
             <h1>Menu</h1>
-            <MenuList menuItems={menuItems}/>
+            <MenuList menuItems={menuItems} user={user}/>
         </div>
     );
 }
