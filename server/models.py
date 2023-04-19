@@ -58,7 +58,7 @@ class Item(db.Model, SerializerMixin):
 class Order(db.Model, SerializerMixin):
     __tablename__ = 'orders'
 
-    serialize_rules = ('-created_at', '-updated_at', '-items','-users')
+    serialize_rules = ('-created_at', '-updated_at', '-items','-user')
 
     id = db.Column(db.Integer, primary_key=True)
     item_id = db.Column(db.Integer, db.ForeignKey('items.id'))
