@@ -9,7 +9,7 @@ from sqlalchemy.exc import IntegrityError
 
 # Local imports
 from config import *
-from models import User, Item, Order
+from models import User, Item, Order, Cart
 
 # Views go here!
 class Signup(Resource):
@@ -165,6 +165,34 @@ class Orders(Resource):
 
 api.add_resource(OrderById, '/orders/<int:order_id>')
 api.add_resource(Orders, '/orders')
+
+class Carts(Resource):
+    def get(self):
+        cart = [cart.to_dict() for cart in Cart.query.all()]
+        return make_response(cart, 200)
+    
+    def post(self):
+        request_json = request.get_json()
+        if not request_json:
+            return make_response({"error":"invalid cat"},404)
+        else:
+            new_cart = Cart(
+                order_string = request_json['order_string']
+            )
+            db.session.add(new_cart)
+            db.session.commit()
+            return make_response(new_cart.to_dict(), 201)
+api.add_resource(Carts, '/carts')
+
+class CartsById(Resource):
+    def get(self):
+        cart = Cart.query.filter_by(id=id).first()
+        if not cart:
+            return make_response({"error": "cart not found"}, 404)
+        else:
+            return make_response(cart.to_dict(), 200)
+    
+api.add_resource(CartsById, '/carts/<int:id>')
 
 if __name__ == '__main__':
     app.run(port=5555, debug=True)
