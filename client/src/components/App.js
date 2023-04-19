@@ -11,6 +11,7 @@ import EditProfile from "./EditProfile";
 
 function App() {
   const [user, setUser] = useState(null);
+  const [userOrders, setUserOrders] = useState([]);
   const MenuAPI ='/items';
 
   const [menuItems, setMenuItems] = useState([]);
@@ -19,7 +20,18 @@ function App() {
     fetch(MenuAPI)
     .then(res => res.json())
     .then(setMenuItems);
-  }, [])
+  }, []);
+
+  useEffect(() => {
+    if (user) {
+      fetch('/orders')
+        .then(res => res.json())
+        .then(orders => {
+          const filteredOrders = orders.filter(order => order.user_id === user.id && order.status === 1);
+          setUserOrders(filteredOrders);
+        });
+    }
+  }, [user]);
   
   useEffect(() => {
     fetch("/check_session")
@@ -56,7 +68,7 @@ function App() {
           </Route>
           <Route path='/neworder'>
             <div className='row'>
-              <NewOrder />
+              <NewOrder orders={userOrders}/>
             </div>
           </Route>
           <Route exact path='/menu'> 

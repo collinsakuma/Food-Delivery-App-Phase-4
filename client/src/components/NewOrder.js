@@ -1,10 +1,10 @@
-import React from 'react'
-
-function NewOrder() {
+import React from 'react';
+import CartCard from './CartCard';
+function NewOrder({ orders }) {
 
     return (
         <div>
-            <h1>Start a new order here!</h1>
+            {orders.map(order => <CartCard key={order.id} order={order}/>)}
         </div>
     );
 }

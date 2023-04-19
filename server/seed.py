@@ -16,6 +16,7 @@ if __name__ == '__main__':
         print("Deleting records...")
         Item.query.delete()
         User.query.delete()
+        Order.query.delete()
 
         print("Creating Items...")
 
