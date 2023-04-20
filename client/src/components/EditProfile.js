@@ -3,7 +3,7 @@ import { useFormik } from "formik";
 import * as yup from "yup";
 import Popup from "reactjs-popup";
 
-function EditProfile({ user }) {
+function EditProfile({ user, handleLogout }) {
     const [password, setPassword] = useState("")
     const [passwordConfirmation, setPasswordConfirmation] = useState("")
     const [address, setAddress] = useState("")
@@ -84,6 +84,14 @@ function EditProfile({ user }) {
         .then((r) => console.log(r))
     }
 
+    function handleDelete() {
+
+        fetch(`/users/delete/${user.id}`, {
+            method:'DELETE',
+        })
+        .then(handleLogout)
+    }
+
     return (
         <div>
             <div>
@@ -153,6 +161,9 @@ function EditProfile({ user }) {
                         />
                     </form>
                 </Popup>
+            </div>
+            <div>
+                <button onClick={handleDelete}>Delete Profile</button>
             </div>
         </div>
     )

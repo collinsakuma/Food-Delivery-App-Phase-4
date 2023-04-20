@@ -9,7 +9,7 @@ from sqlalchemy.exc import IntegrityError
 
 # Local imports
 from config import *
-from models import User, Item, Order
+from models import User, Item, Order, Cart
 
 # Views go here!
 class Signup(Resource):
@@ -93,6 +93,7 @@ class Users(Resource):
     def get(self):
         users = [user.to_dict() for user in User.query.all()]
         return make_response(users, 200)
+    
 api.add_resource(Users, '/users')
 
 class UserById(Resource):
@@ -165,6 +166,48 @@ class Orders(Resource):
 
 api.add_resource(OrderById, '/orders/<int:order_id>')
 api.add_resource(Orders, '/orders')
+
+class Carts(Resource):
+    def get(self):
+        cart = [cart.to_dict() for cart in Cart.query.all()]
+        return make_response(cart, 200)
+    
+    def post(self):
+        request_json = request.get_json()
+        if not request_json:
+            return make_response({"error":"invalid cat"},404)
+        else:
+            new_cart = Cart(
+                order_string = request_json['order_string'],
+                user_id = request_json['user_id']
+            )
+            db.session.add(new_cart)
+            db.session.commit()
+            return make_response(new_cart.to_dict(), 201)
+api.add_resource(Carts, '/carts')
+
+class CartsById(Resource):
+    def get(self):
+        cart = Cart.query.filter_by(id=id).first()
+        if not cart:
+            return make_response({"error": "cart not found"}, 404)
+        else:
+            return make_response(cart.to_dict(), 200)
+    
+api.add_resource(CartsById, '/carts/<int:id>')
+
+@app.route('/users/delete/<int:id>', methods=['DELETE'])
+def user_delete(id):    
+    if request.method == 'DELETE':
+        user_to_delete_id = session['user_id']
+        user = User.query.filter_by(id=id).first()
+        db.session.delete(user)
+        db.session.commit()
+        return make_response({"Message": "Yeet"},200)
+
+
+
+
 
 if __name__ == '__main__':
     app.run(port=5555, debug=True)

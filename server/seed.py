@@ -8,7 +8,7 @@ from faker import Faker
 
 # Local imports
 from app import app
-from models import db, User, Item, Order
+from models import db, User, Item, Order, Cart
 
 if __name__ == '__main__':
     fake = Faker()
@@ -17,6 +17,7 @@ if __name__ == '__main__':
         Item.query.delete()
         User.query.delete()
         Order.query.delete()
+        Cart.query.delete()
 
         print("Creating Items...")
 

@@ -16,22 +16,26 @@ function App() {
 
   const [menuItems, setMenuItems] = useState([]);
 
+  const [orderList, setOrderList] = useState([]);
+
+  const handleOrders = (new_order) => {
+    return setOrderList([...orderList, new_order])
+  }
+  console.log(orderList)
+
+  const clearCart = () => {
+    setOrderList([])
+  }
+
+
   useEffect(()=> {
     fetch(MenuAPI)
     .then(res => res.json())
     .then(setMenuItems);
   }, []);
 
-  useEffect(() => {
-    if (user) {
-      fetch('/orders')
-        .then(res => res.json())
-        .then(orders => {
-          const filteredOrders = orders.filter(order => order.user_id === user.id && order.status === 1);
-          setUserOrders(filteredOrders);
-        });
-    }
-  }, [user]);
+  
+  
   
   useEffect(() => {
     fetch("/check_session")
@@ -68,12 +72,12 @@ function App() {
           </Route>
           <Route path='/neworder'>
             <div className='row'>
-              <NewOrder orders={userOrders}/>
+              <NewOrder orders={userOrders} orderList={orderList} clearCart={clearCart} user={user}/>
             </div>
           </Route>
           <Route exact path='/menu'> 
             <div className='row'>
-              <Menu menuItems={menuItems} user={user}/>
+              <Menu menuItems={menuItems} user={user} handleOrders={handleOrders}/>
             </div>
           </Route>
           <Route exact path='/profile'>
@@ -83,7 +87,7 @@ function App() {
           </Route>
           <Route exact path="/profile/edit_profile">
             <div className="row">
-              <EditProfile user={user}/>
+              <EditProfile user={user} handleLogout={handleLogout}/>
             </div>
           </Route>
         </Switch>

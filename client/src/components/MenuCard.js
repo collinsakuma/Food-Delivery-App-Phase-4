@@ -1,15 +1,15 @@
 import React from 'react'
 import {useEffect, useState} from 'react'
 
-function MenuCard({menuItem, user}) {
-    const createOrder = async () => {
-        const order = {
+function MenuCard({menuItem, user, handleOrders}) {
+    const createOrder = async () => { 
+      const order = {
             item_id: menuItem.id,
             user_id: user.id,
             quantity: 1,
             status: 1,
         };
-
+        handleOrders(order.item_id) 
         try {
             const response = await fetch('/orders', {
               method: 'POST',

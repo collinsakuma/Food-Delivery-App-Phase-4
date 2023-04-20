@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 function CartCard({order}) {
     const [orderItem, setOrderItem] = useState("")
     useEffect(() => {
-    fetch(`/items/${order.item_id}`)
+    fetch(`/items/${order}`)
         .then((r) => r.json())
         .then(setOrderItem)
     }, [order]);
@@ -11,8 +11,11 @@ function CartCard({order}) {
 
     return (
         <div>
-            <h2>This is a cart item</h2>
+            
             <p>{orderItem.name}</p>
+            <img src={orderItem.img_url}/>
+            <p>${orderItem.price}</p>
+           
         </div>
     )
 }
