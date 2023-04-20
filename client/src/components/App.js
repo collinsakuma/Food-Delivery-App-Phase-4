@@ -11,11 +11,8 @@ import EditProfile from "./EditProfile";
 
 function App() {
   const [user, setUser] = useState(null);
-  const [userOrders, setUserOrders] = useState([]);
   const MenuAPI ='/items';
-
   const [menuItems, setMenuItems] = useState([]);
-
   const [orderList, setOrderList] = useState([]);
 
   const handleOrders = (new_order) => {
@@ -72,7 +69,7 @@ function App() {
           </Route>
           <Route path='/neworder'>
             <div className='row'>
-              <NewOrder orders={userOrders} orderList={orderList} clearCart={clearCart} user={user}/>
+              <NewOrder orderList={orderList} clearCart={clearCart} user={user}/>
             </div>
           </Route>
           <Route exact path='/menu'> 

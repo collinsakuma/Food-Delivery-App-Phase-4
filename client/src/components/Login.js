@@ -5,8 +5,8 @@ import SignUpForm from "./SignUpForm";
 function Login({ onLogin }) {
     const [showLogin, setShowLogin] = useState(true);
     return (
-        <div>
-            <h1>Delivery</h1>
+        <div className="container">
+            <h1 className="row">Flat Cake Factory</h1>
             {showLogin ? (
                 <>
                     <LoginForm onLogin={onLogin} />

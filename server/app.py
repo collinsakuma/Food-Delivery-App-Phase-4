@@ -179,7 +179,8 @@ class Carts(Resource):
         else:
             new_cart = Cart(
                 order_string = request_json['order_string'],
-                user_id = request_json['user_id']
+                user_id = request_json['user_id'],
+                order_total = request_json['order_total']
             )
             db.session.add(new_cart)
             db.session.commit()

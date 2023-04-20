@@ -74,3 +74,4 @@ class Cart(db.Model, SerializerMixin):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer)
     order_string = db.Column(db.String)
+    order_total = db.Column(db.String)

@@ -7,14 +7,12 @@ function CartCard({order}) {
         .then((r) => r.json())
         .then(setOrderItem)
     }, [order]);
-
-
     return (
         <div>
             
             <p>{orderItem.name}</p>
             <img src={orderItem.img_url}/>
-            <p>${orderItem.price}</p>
+            <p>${orderItem.price/100}</p>
            
         </div>
     )

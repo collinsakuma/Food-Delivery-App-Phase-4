@@ -1,10 +1,12 @@
 import React from 'react'
-
+// import clf from './photos/clf.jpeg';
 
 function Header() {
 
     return (
-        <div><h1>Welcome to whatever the fuck our restaurant is called!!!!!!!</h1></div>
+        <div>
+            <img/>
+            <h1>Flat Cake Factory</h1></div>
     );
 }
 

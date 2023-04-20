@@ -42,25 +42,41 @@ function LoginForm({onLogin}) {
 
 
     return (
-        <form onSubmit={formik.handleSubmit}>
-            <input
-                type="text"
-                id="username"
-                value={formik.values.username}
-                onChange={formik.handleChange}
-            />
-            <input
-                type="password"
-                id="password"
-                value={formik.values.password} 
-                onChange={formik.handleChange}
-            />
-            <input
-                type="submit"
-                name="submit"
-                value="Login"
-            />
-        </form>
+        <div className="container">
+            <form className="row d-flex justify-content-center" onSubmit={formik.handleSubmit}>
+                <div className="col-3 justify-content-center">
+                    <input
+                    className="form-control"
+                    type="text"
+                    id="username"
+                    value={formik.values.username}
+                    onChange={formik.handleChange}
+                    placeholder="Username"
+                    />
+                </div>
+                <div className="w-100 d-none d-md-block"></div>
+                <div className="col-3 justify-content-center ">
+                    <input
+                    className="form-control"
+                    type="password"
+                    id="password"
+                    value={formik.values.password}
+                    onChange={formik.handleChange}
+                    placeholder="Password"
+                    />
+                </div>
+                <div className="w-100 d-none d-md-block"></div>
+                <div className="col-2">
+                    <button
+                    className="btn btn-primary"
+                    type="submit"
+                    name="submit"
+                    >
+                    Login
+                    </button>
+                </div>
+            </form>
+        </div>
     )
 }
 
