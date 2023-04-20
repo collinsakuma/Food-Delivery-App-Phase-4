@@ -203,7 +203,7 @@ def user_delete(id):
         user = User.query.filter_by(id=id).first()
         db.session.delete(user)
         db.session.commit()
-        return make_response({"Message": "Yeet"},200)
+        return make_response({"Message": "Yeet!"},200)
 
 
 
