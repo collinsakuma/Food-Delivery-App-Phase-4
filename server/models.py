@@ -67,3 +67,10 @@ class Order(db.Model, SerializerMixin):
     status = db.Column(db.Integer)
     created_at = db.Column(db.DateTime, server_default=db.func.now())
     updated_at = db.Column(db.DateTime, onupdate=db.func.now())
+
+class Cart(db.Model, SerializerMixin):
+    __tablename__ = 'carts'
+
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer)
+    order_string = db.Column(db.String)
