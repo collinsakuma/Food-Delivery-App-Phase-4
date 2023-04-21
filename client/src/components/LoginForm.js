@@ -42,9 +42,10 @@ function LoginForm({onLogin}) {
 
 
     return (
-        <div className="container">
-            <form className="row d-flex justify-content-center" onSubmit={formik.handleSubmit}>
-                <div className="col-3 justify-content-center">
+        <div className="container ">
+            <h2 className="row justify-content-center">Sign in</h2>
+            <form className="row d-flex justify-content-center g-1" onSubmit={formik.handleSubmit}>
+                <div className="col-4 justify-content-center">
                     <input
                     className="form-control"
                     type="text"
@@ -54,8 +55,9 @@ function LoginForm({onLogin}) {
                     placeholder="Username"
                     />
                 </div>
-                <div className="w-100 d-none d-md-block"></div>
-                <div className="col-3 justify-content-center ">
+                    <div className="w-100 d-none d-md-block"></div>
+                    
+                <div className="col-4 justify-content-center">
                     <input
                     className="form-control"
                     type="password"
@@ -65,10 +67,10 @@ function LoginForm({onLogin}) {
                     placeholder="Password"
                     />
                 </div>
-                <div className="w-100 d-none d-md-block"></div>
-                <div className="col-2">
+                    <div className="w-100 d-none d-md-block"></div>
+                <div className="row col-2 justify-content-center g-1">
                     <button
-                    className="btn btn-primary"
+                    className="maroonButtonColor-btn"
                     type="submit"
                     name="submit"
                     >

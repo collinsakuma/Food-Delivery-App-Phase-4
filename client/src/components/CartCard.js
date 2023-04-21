@@ -11,7 +11,7 @@ function CartCard({order}) {
         <div>
             
             <p>{orderItem.name}</p>
-            <img src={orderItem.img_url}/>
+            <img className = 'MenuItem-image' src={orderItem.img_url}/>
             <p>${orderItem.price/100}</p>
            
         </div>

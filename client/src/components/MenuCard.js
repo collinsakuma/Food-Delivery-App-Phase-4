@@ -33,9 +33,9 @@ function MenuCard({menuItem, user, handleOrders}) {
     
 
     return(
-    <div>
+    <div className='MenuItem'>
         <h2>{menuItem.name}</h2>
-        <img src={menuItem.img_url}/>
+        <img className='MenuItem-image' src={menuItem.img_url} />
         <h3>Category:{menuItem.category}</h3>
         <h3>${menuItem.price /100}</h3>
         <button onClick={createOrder}>Add to Cart</button>

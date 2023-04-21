@@ -21,7 +21,7 @@ function CartContainer({ cart }) {
     }, [cart.order_string]);
 
     return (
-        <div>
+        <div className="card col-5 m-3">
             <OrderCard items={items}/>
             <label>Total Price: ${cart.order_total/100}</label>
         </div>

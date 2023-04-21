@@ -4,7 +4,7 @@ import MenuList from './MenuList'
 function Menu({menuItems, user, handleOrders}) {
 
     return (
-        <div>
+        <div className='Menu'>
             <h1>Menu</h1>
             <MenuList menuItems={menuItems} user={user} handleOrders={handleOrders}/>
         </div>

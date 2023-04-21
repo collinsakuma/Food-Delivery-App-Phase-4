@@ -4,9 +4,10 @@ import React from 'react'
 function Header() {
 
     return (
-        <div>
+        <div className="header-component bg-light title-padding">
             <img/>
-            <h1>Flat Cake Factory</h1></div>
+                <h1 className="website-name title-font">Flat Cake Factory</h1>
+        </div>
     );
 }
 

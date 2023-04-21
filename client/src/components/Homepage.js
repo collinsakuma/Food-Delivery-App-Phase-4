@@ -22,8 +22,10 @@ function Homepage() {
 
     return (
         <div className='Homepage'>
-        <h1>Home page</h1>
+        <h1>Welcome to The Flat-Cake Factory!</h1>
         <h2>Featured Items</h2>
+
+        <br></br>
         {items.map(item => <HomeCard key={item.id} item={item}/> )}
 
         </div>

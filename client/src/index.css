@@ -26,7 +26,7 @@
     margin: 0 auto;
     max-width: 1200px;
     padding: 20px;
-    background-color: orange;
+    background-color: #fff8ec;
   }
   
   .Homepage h1 {
@@ -45,17 +45,96 @@
   }
 
   .HomeCard {
-    background-color: orange;
+    background-color: rgb(241, 195, 111);
     border-radius: 10px;
     border: black solid 1px;
     padding: 1 rem;
     box-shadow: 3px 4px gray;
   }
   
+  .maroonButtonColor-btn {
+    background-color: #B43257;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    height: 40px
+  }
 
+  .navbar {
+    color: black;
+    font-size: 115%;
+  }
 
+  .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    text-decoration: underline;
+    color: whitesmoke;
+  }
+
+  .button-link {
+    background: none;
+    border: none;
+    text-decoration: none;
+    color: black;
+  }
+
+  .MenuItem-image {
+    width: 45%;
+    height: auto;
+    border: 2px solid black; /* Add a 2-pixel solid black border */
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Add a 2-pixel offset for the horizontal and vertical position, a 5-pixel blur radius, and a semi-transparent black color for the shadow */
+  }
+
+  .profile-image {
+    width: 20%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  .Homepage {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .pastorders {
+    text-decoration: underline;
+  }
+
+  .navbar {
+    background-color: #B43257;
+  }
   
+  .nav-link.active {
+    font-weight: 450;
+  }
+
+  .Menu {
+    background-color: #fff8ec;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .Orders {
+    background-color: #fff8ec;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .Header{
+    background-color: #fff8ec;
+  }
   
+  .main {
+    background-color: #fff8ec;
+  }
+
+  .profile {
+    background-color: #fff8ec;
+  }
   
+
+  #profile {
+    justify-content: center;
+    text-align: center;
+  }
   
   

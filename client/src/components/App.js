@@ -55,12 +55,12 @@ function App() {
   if (!user) return <Login onLogin={setUser} />;
   
   return (
-    <div className = 'app container'>
+    <div className = ''>
     <div className="App">
-      <Header />
+      <Header  className='Header'/>
       <Navbar handleLogout={handleLogout} />
       <h1></h1>
-      <div>
+      <div clasName='main'>
         <Switch>
           <Route exact path='/'>
             <div className='row'>

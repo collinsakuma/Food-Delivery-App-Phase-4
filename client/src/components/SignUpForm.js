@@ -50,61 +50,77 @@ function SignUpForm({ onLogin }) {
     });
 
     return (
-        <div className='sign-up'>
-            <form onSubmit={formik.handleSubmit}>
-                <h2>Add New User</h2>
-                <label>Username:</label>
-                <input
-                    className="sign-up input"
-                    type='text'
-                    id='username'
-                    value={formik.values.username}
-                    onChange={formik.handleChange}
-                    placeholder='Username...'
-                    />
-                <label>Password:</label>
-                <input
-                    className='sign-up input'
-                    type='password'
-                    id='password'
-                    value={formik.values.password}
-                    onChange={formik.handleChange}
-                    placeholder='password...'
-                    />
-                <label>Password Confirmation:</label>
-                <input
-                    className="sign-up input"
-                    type='password'
-                    id='passwordConfirmation'
-                    value={formik.values.passwordConfirmation}
-                    onChange={formik.handleChange}
-                    placeholder='Password...'
-                />
-                <label>Address:</label>
-                <input
-                    className="sign-up input"
-                    type='address'
-                    id='address'
-                    value={formik.values.address}
-                    onChange={formik.handleChange}
-                    placeholder='Address...'
-                />
-                <label>Bio Picture</label>
-                <input
-                    className="sign-up input"
-                    type='img_url'
-                    id='img_url'
-                    value={formik.values.img_url}
-                    onChange={formik.handleChange}
-                    placeholder='Image URL...'
-                />
-                <input
-                    type="submit"
-                    name="submit"
-                    value="signup"
-                />
-            </form>
-        </div>
+<div className="container">
+  <form className="row justify-content-center" onSubmit={formik.handleSubmit}>
+    <h2>Add New User</h2>
+    <div className="col">
+      <div className="form-group">
+        <label className="form-label">Username:</label>
+        <input
+          className="form-control"
+          type="text"
+          id="username"
+          value={formik.values.username}
+          onChange={formik.handleChange}
+          placeholder="Username..."
+        />
+      </div>
+      <div className="form-group">
+        <label className="form-label">Password:</label>
+        <input
+          className="form-control"
+          type="password"
+          id="password"
+          value={formik.values.password}
+          onChange={formik.handleChange}
+          placeholder="password..."
+        />
+      </div>
+      <div className="form-group">
+        <label className="form-label">Password Confirmation:</label>
+        <input
+          className="form-control"
+          type="password"
+          id="passwordConfirmation"
+          value={formik.values.passwordConfirmation}
+          onChange={formik.handleChange}
+          placeholder="Password..."
+        />
+      </div>
+    </div>
+    <div className="col-md-6">
+      <div className="form-group">
+        <label className="form-label">Address:</label>
+        <input
+          className="form-control"
+          type="address"
+          id="address"
+          value={formik.values.address}
+          onChange={formik.handleChange}
+          placeholder="Address..."
+        />
+      </div>
+      <div className="form-group">
+        <label className="form-label">Bio Picture:</label>
+        <input
+          className="form-control"
+          type="img_url"
+          id="img_url"
+          value={formik.values.img_url}
+          onChange={formik.handleChange}
+          placeholder="Image URL..."
+        />
+      </div>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+    </div>
+    <div className="row justify-content-center">
+        <input className="maroonButtonColor-btn col-2" type="submit" name="submit" value="Sign Up" />
+    </div>
+  </form>
+</div>
     )
 }
 
