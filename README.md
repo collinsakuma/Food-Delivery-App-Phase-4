@@ -3,6 +3,9 @@ Phase-4 Project Flat Cake Factory
 ## Description 
 This is a full stack application that utilizes a python Flask back end API that is attached to a React.js front end.
 
+model diagram Link: https://dbdiagram.io/d/644313306b3194705100a681
+WireFrame link: https://wireframe.cc/1jSRc9
+
 ### users can:
 - login to their own account if one alrady exist. 
 - Create their own accounts that are persisted on the back end of the application. 
