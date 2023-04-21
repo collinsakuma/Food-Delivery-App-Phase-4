@@ -40,10 +40,11 @@ function NewOrder({ orderList, clearCart, user }) {
     return (
         <div className='Orders'>
             <h1>Your Order</h1>
+            <label style={{margin:"10px"}}>Order Total: ${(orderTotal/100).toFixed(2)}</label>
+            <br></br>
             <button className="maroonButtonColor-btn" onClick={handlePlaceOrder} style={{margin: "20px"}}>Place Order</button>
             {orderList.map(order => <CartCard key={order.id} order={order}/>)}
             <br></br>
-            <label style={{margin:"10px"}}>Order Total: ${orderTotal/100}</label>
             <div style={{marginTop:"1000px"}}></div>
         </div>
     );
