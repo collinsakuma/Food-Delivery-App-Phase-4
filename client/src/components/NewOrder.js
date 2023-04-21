@@ -39,11 +39,12 @@ function NewOrder({ orderList, clearCart, user }) {
     console.log(orderTotal)
     return (
         <div className='Orders'>
-            <h1>Your Cart</h1>
+            <h1>Your Order</h1>
+            <button className="maroonButtonColor-btn" onClick={handlePlaceOrder} style={{margin: "20px"}}>Place Order</button>
             {orderList.map(order => <CartCard key={order.id} order={order}/>)}
-            <button onClick={handlePlaceOrder}>Place Order</button>
             <br></br>
-            <label>Order Total: ${orderTotal/100}</label>
+            <label style={{margin:"10px"}}>Order Total: ${orderTotal/100}</label>
+            <div style={{marginTop:"1000px"}}></div>
         </div>
     );
 }

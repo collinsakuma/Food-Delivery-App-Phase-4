@@ -37,8 +37,8 @@ function MenuCard({menuItem, user, handleOrders}) {
         <h2>{menuItem.name}</h2>
         <img className='MenuItem-image' src={menuItem.img_url} />
         <h3>Category:{menuItem.category}</h3>
-        <h3>${menuItem.price /100}</h3>
-        <button onClick={createOrder}>Add to Cart</button>
+        <h3>${(menuItem.price /100).toFixed(2)}</h3>
+        <button className="maroonButtonColor-btn" onClick={createOrder}>Add to Cart</button>
     </div>
     );
 }

@@ -40,10 +40,11 @@ function Profile({ user }) {
                 <h2 className="text-center pastorders">Past Orders</h2>
             </div>
             <div className="container container-cards">
-                <div className="row row-cols-2">
+                <div className="row row-cols-2 justify-content-center">
                     {filteredCartsArray.map(cart => <CartContainer key={cart.id} cart={cart}/>)}
                 </div>
             </div>
+            <div style={{marginTop:"1000px"}}></div>
         </div>
     );
 }

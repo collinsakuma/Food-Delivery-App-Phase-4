@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
 
-function OrdersCard({ items }) {
+function OrdersCard({ item }) {
   
     return (
-      <div>
-        {items.map((item) => (
-          <div key={item.id}>
-            <h2>{item.name}</h2>
-            <p>${item.price/100}</p>
+      <div className="card-body">
+          <div className="">
+            <div className="center-text" style={{display:"flex"}}>
+              <p className=""><strong>{item.name}</strong></p>
+              <p>&nbsp;-&nbsp;${(item.price/100).toFixed(2)}</p>
+            </div>
           </div>
-        ))}
       </div>
     );
   }

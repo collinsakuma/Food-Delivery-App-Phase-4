@@ -10,7 +10,7 @@ function Navbar({ handleLogout }) {
                         <NavLink exact to='/' className="nav-link">Home</NavLink>
                     </li>
                     <li className="nav-item"> 
-                        <NavLink to='/neworder' className="nav-link">New Order</NavLink>
+                        <NavLink to='/neworder' className="nav-link">Order</NavLink>
                     </li>
                     <li className="nav-item">
                         <NavLink to='/menu' className="nav-link">Menu</NavLink>

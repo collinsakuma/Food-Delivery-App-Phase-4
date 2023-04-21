@@ -1,140 +1,158 @@
+
+body {
+  font-family: 'Cormorant Garamond', serif;
+  background-color: #fff8ec;
+}
+
 .popup-content {
     margin: auto;
+    text-align: center;
     background: rgb(255, 255, 255);
     width: 50%;
     padding: 5px;
-  }
-  .popup-arrow {
-    color: rgb(255, 255, 255);
-  }
-  [role='tooltip'].popup-content {
-    width: 200px;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 3px;
-  }
+    
+}
+.popup-arrow {
+  color: rgb(255, 255, 255);
+}
+[role='tooltip'].popup-content {
+  width: 300px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 3px;
+}
+
+.popup-overlay {
+  background: rgba(0, 0, 0, 0.5);
+}
+[data-popup='tooltip'].popup-overlay {
+  background: transparent;
+}
+
+.Homepage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 20px;
+  background-color: #fff8ec;
+}
+
+.Homepage h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.Homepage h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.Homepage .HomeCard {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.HomeCard {
+  background-color: rgb(241, 195, 111);
+  border-radius: 10px;
+  border: black solid 1px;
+  padding: 1 rem;
+  box-shadow: 3px 4px gray;
+}
+
+.maroonButtonColor-btn {
+  background-color: #B43257;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  height: 40px
+}
+
+.navbar {
+  color: black;
+  font-size: 115%;
+}
+
+.navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+  text-decoration: underline;
+  color: whitesmoke;
+}
+
+.button-link {
+  background: none;
+  border: none;
+  text-decoration: none;
+  color: black;
+}
+
+.MenuItem-image {
+  width: 45%;
+  height: auto;
+  border: 2px solid black; /* Add a 2-pixel solid black border */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Add a 2-pixel offset for the horizontal and vertical position, a 5-pixel blur radius, and a semi-transparent black color for the shadow */
+}
   
-  .popup-overlay {
-    background: rgba(0, 0, 0, 0.5);
-  }
-  [data-popup='tooltip'].popup-overlay {
-    background: transparent;
-  }
+.profile-image {
+  width: 20%;
+  height: auto;
+  border-radius: 10px;
+}
 
-  .Homepage {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
-    max-width: 1200px;
-    padding: 20px;
-    background-color: #fff8ec;
-  }
-  
-  .Homepage h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-  }
-  
-  .Homepage h2 {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-  }
-  
-  .Homepage .HomeCard {
-    width: 100%;
-    margin-bottom: 20px;
-  }
 
-  .HomeCard {
-    background-color: rgb(241, 195, 111);
-    border-radius: 10px;
-    border: black solid 1px;
-    padding: 1 rem;
-    box-shadow: 3px 4px gray;
-  }
-  
-  .maroonButtonColor-btn {
-    background-color: #B43257;
-    border: none;
-    border-radius: 4px;
-    color: white;
-    height: 40px
-  }
+.gif-image {
+  width: 290px;
+  height: auto;
+}
 
-  .navbar {
-    color: black;
-    font-size: 115%;
-  }
+.Homepage {
+  justify-content: center;
+  text-align: center;
+}
 
-  .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
-    text-decoration: underline;
-    color: whitesmoke;
-  }
+.pastorders {
+  text-decoration: underline;
+}
 
-  .button-link {
-    background: none;
-    border: none;
-    text-decoration: none;
-    color: black;
-  }
+.navbar {
+  background-color: #B43257;
+}
 
-  .MenuItem-image {
-    width: 45%;
-    height: auto;
-    border: 2px solid black; /* Add a 2-pixel solid black border */
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* Add a 2-pixel offset for the horizontal and vertical position, a 5-pixel blur radius, and a semi-transparent black color for the shadow */
-  }
+.nav-link.active {
+  font-weight: 450;
+}
 
-  .profile-image {
-    width: 20%;
-    height: auto;
-    border-radius: 10px;
-  }
+.Menu {
+  background-color: #fff8ec;
+  justify-content: center;
+  text-align: center;
+}
 
-  .Homepage {
-    justify-content: center;
-    text-align: center;
-  }
+.Orders {
+  background-color: #fff8ec;
+  justify-content: center;
+  text-align: center;
+}
 
-  .pastorders {
-    text-decoration: underline;
-  }
+.Header{
+  background-color: #fff8ec;
+}
 
-  .navbar {
-    background-color: #B43257;
-  }
-  
-  .nav-link.active {
-    font-weight: 450;
-  }
+.main {
+  background-color: #fff8ec;
+}
 
-  .Menu {
-    background-color: #fff8ec;
-    justify-content: center;
-    text-align: center;
-  }
+.profile {
+  background-color: #fff8ec;
+}
 
-  .Orders {
-    background-color: #fff8ec;
-    justify-content: center;
-    text-align: center;
-  }
 
-  .Header{
-    background-color: #fff8ec;
-  }
-  
-  .main {
-    background-color: #fff8ec;
-  }
-
-  .profile {
-    background-color: #fff8ec;
-  }
-  
-
-  #profile {
-    justify-content: center;
-    text-align: center;
-  }
-  
-  
+#profile {
+  justify-content: center;
+  text-align: center;
+}
+.title-font {
+  font-family: 'MedievalSharp', cursive;
+  font-weight: 600;
+  font-size: 400%;
+  color: #8f6724;
+}

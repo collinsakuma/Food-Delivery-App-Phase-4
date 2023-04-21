@@ -12,7 +12,7 @@ function CartCard({order}) {
             
             <p>{orderItem.name}</p>
             <img className = 'MenuItem-image' src={orderItem.img_url}/>
-            <p>${orderItem.price/100}</p>
+            <p>${(orderItem.price/100).toFixed(2)}</p>
            
         </div>
     )

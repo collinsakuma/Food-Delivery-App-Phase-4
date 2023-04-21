@@ -1,5 +1,5 @@
 import {useState, useEffect} from "react";
-import OrderCard from "./OrdersCard";
+import OrdersCard from "./OrdersCard";
 
 function CartContainer({ cart }) {
     
@@ -21,9 +21,11 @@ function CartContainer({ cart }) {
     }, [cart.order_string]);
 
     return (
-        <div className="card col-5 m-3">
-            <OrderCard items={items}/>
-            <label>Total Price: ${cart.order_total/100}</label>
+        <div className="card m-3">
+            {items.map((item) => <OrdersCard key={item.id} item={item}/>)}
+            <div className="card-footer bg-transparent">
+                <label><strong>Total Cost: </strong>${(cart.order_total/100).toFixed(2)}</label>
+            </div>
         </div>
     )
 }

@@ -15,7 +15,7 @@ function Login({ onLogin }) {
             {showLogin ? (
                 <>
                     <LoginForm onLogin={onLogin} />
-                    <p className="row justify-content-center">
+                    <div className="row justify-content-center">
                         <div className="col text-center">
                             <br></br>
                             <br></br>
@@ -26,12 +26,12 @@ function Login({ onLogin }) {
                                 Sign Up
                             </button>
                         </div>
-                    </p>
+                    </div>
                 </>
                 ) : (
                 <>
                     <SignUpForm onLogin={onLogin} />
-                    <p className="row">
+                    <div className="row">
                         <div className="col text-center">
                         <br></br>
                             <br></br>
@@ -42,7 +42,7 @@ function Login({ onLogin }) {
                                 Log In
                             </button>
                         </div>
-                    </p>
+                    </div>
                 </>
             )}
         </div>

@@ -60,7 +60,7 @@ function App() {
       <Header  className='Header'/>
       <Navbar handleLogout={handleLogout} />
       <h1></h1>
-      <div clasName='main'>
+      <div className='main'>
         <Switch>
           <Route exact path='/'>
             <div className='row'>
